@@ -1,3 +1,8 @@
+/* ===== Breakpoints (для справки, raw CSS не умеет var() в @media) =====
+   480px — планшет
+   960px — десктоп
+*/
+
 /* ===== Design tokens ===== */
 :root {
   --color-bg: #F5F4F0;
@@ -11,15 +16,20 @@
   --font-display: "Geologica", sans-serif;
   --font-body: "Inter", sans-serif;
 
+  /* атомарные отступы — не нуждаются в масштабировании */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --space-7: 48px;
-  --space-8: 64px;
-  --space-9: 96px;
+
+  /* макро-отступы — текут вместе с шириной экрана.
+     min зафиксирован на мобильных, max — на десктопе,
+     между ними — пропорциональный переход. Оба края кратны 4px. */
+  --space-5: clamp(16px, 4vw, 24px);
+  --space-6: clamp(20px, 5vw, 32px);
+  --space-7: clamp(32px, 6vw, 48px);
+  --space-8: clamp(40px, 8vw, 64px);
+  --space-9: clamp(48px, 10vw, 96px);
 
   --radius-md: 6px;
   --radius-lg: 14px;
@@ -44,7 +54,9 @@ body {
   background: var(--color-bg);
 }
 
-/* ===== Section layout ===== */
+/* ===== Section layout =====
+   Паддинг секции на var(--space-9) — уже плавно сжимается
+   на мобильных без отдельного media query. */
 .catalog {
   padding: var(--space-9) var(--space-5);
 }
@@ -54,14 +66,24 @@ body {
   margin: 0 auto;
 }
 
+/* Mobile first: шапка стоит в столбик */
 .catalog__header {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--space-4);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
   padding-bottom: var(--space-5);
   margin-bottom: var(--space-7);
   border-bottom: 1px solid var(--color-line);
+}
+
+@media (min-width: 480px) {
+  .catalog__header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
 }
 
 .catalog__eyebrow {
@@ -76,7 +98,7 @@ body {
 .catalog__heading {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  font-size: clamp(1.5rem, 1.1rem + 2.2vw, 2.5rem);
   line-height: 1.15;
   letter-spacing: -0.01em;
 }
@@ -87,11 +109,26 @@ body {
   white-space: nowrap;
 }
 
-/* ===== Grid ===== */
+/* ===== Grid =====
+   Mobile first: 1 колонка по умолчанию,
+   2 — с планшета, 3 — с десктопа.
+   Gap — на текучих токенах, без переопределений. */
 .catalog__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-6) var(--space-5);
+}
+
+@media (min-width: 480px) {
+  .catalog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .catalog__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* ===== Product card ===== */
@@ -192,8 +229,8 @@ body {
 }
 
 .product-card__cta {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid var(--color-ink);
   background: transparent;
@@ -227,27 +264,6 @@ body {
 .product-card__cta:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 960px) {
-  .catalog__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 620px) {
-  .catalog {
-    padding: var(--space-7) var(--space-4);
-  }
-  .catalog__grid {
-    grid-template-columns: 1fr;
-  }
-  .catalog__header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-2);
-  }
 }
 
 /* ===== Accessibility ===== */
