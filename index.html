@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Каталог — Предметы для дома</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <section class="catalog" aria-labelledby="catalog-heading">
+    <div class="catalog__container">
+
+      <header class="catalog__header">
+        <div>
+          <p class="catalog__eyebrow">Каталог</p>
+          <h2 id="catalog-heading" class="catalog__heading">Предметы для&nbsp;дома</h2>
+        </div>
+        <p class="catalog__count">6 предметов</p>
+      </header>
+
+      <ul class="catalog__grid" role="list">
+
+        <li>
+          <article class="product-card">
+            <figure class="product-card__media">
+              <span class="product-card__tag">Кресла</span>
+              <img
+                src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=900&auto=format&fit=crop"
+                alt="Кресло Aalto из тёмно-коричневой кожи на ореховом каркасе"
+                width="720" height="900" loading="lazy"
+              />
+            </figure>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Кресло Aalto</h3>
+              <p class="product-card__material">Кожа, массив ореха</p>
+              <div class="product-card__footer">
+                <data class="product-card__price" value="184000">184 000 ₸</data>
+                <button type="button" class="product-card__cta" aria-label="Добавить «Кресло Aalto» в корзину">
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="product-card">
+            <figure class="product-card__media">
+              <span class="product-card__tag">Диваны</span>
+              <img
+                src="https://images.unsplash.com/photo-1684165610413-2401399e0e59?q=80&w=900&auto=format&fit=crop"
+                alt="Диван Lirio светлого льняного оттенка на дубовом каркасе"
+                width="720" height="900" loading="lazy"
+              />
+            </figure>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Диван Lirio</h3>
+              <p class="product-card__material">Лён, массив дуба</p>
+              <div class="product-card__footer">
+                <data class="product-card__price" value="412000">412 000 ₸</data>
+                <button type="button" class="product-card__cta" aria-label="Добавить «Диван Lirio» в корзину">
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="product-card">
+            <figure class="product-card__media">
+              <span class="product-card__tag">Столы</span>
+              <img
+                src="https://images.unsplash.com/photo-1604578762246-41134e37f9cc?q=80&w=900&auto=format&fit=crop"
+                alt="Обеденный стол Quercus из массива дуба"
+                width="720" height="900" loading="lazy"
+              />
+            </figure>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Стол Quercus</h3>
+              <p class="product-card__material">Массив дуба</p>
+              <div class="product-card__footer">
+                <data class="product-card__price" value="268000">268 000 ₸</data>
+                <button type="button" class="product-card__cta" aria-label="Добавить «Стол Quercus» в корзину">
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="product-card">
+            <figure class="product-card__media">
+              <span class="product-card__tag">Освещение</span>
+              <img
+                src="https://images.unsplash.com/photo-1667312939978-64cf31718a6e?q=80&w=900&auto=format&fit=crop"
+                alt="Настольный светильник Solis с латунным основанием"
+                width="720" height="900" loading="lazy"
+              />
+            </figure>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Светильник Solis</h3>
+              <p class="product-card__material">Латунь, стекло</p>
+              <div class="product-card__footer">
+                <data class="product-card__price" value="96000">96 000 ₸</data>
+                <button type="button" class="product-card__cta" aria-label="Добавить «Светильник Solis» в корзину">
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="product-card">
+            <figure class="product-card__media">
+              <span class="product-card__tag">Стулья</span>
+              <img
+                src="https://images.unsplash.com/photo-1691036562132-56a310d4b789?q=80&w=900&auto=format&fit=crop"
+                alt="Стул Anker из ясеня у окна"
+                width="720" height="900" loading="lazy"
+              />
+            </figure>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Стул Anker</h3>
+              <p class="product-card__material">Ясень, лён</p>
+              <div class="product-card__footer">
+                <data class="product-card__price" value="78000">78 000 ₸</data>
+                <button type="button" class="product-card__cta" aria-label="Добавить «Стул Anker» в корзину">
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="product-card">
+            <figure class="product-card__media">
+              <span class="product-card__tag">Декор</span>
+              <img
+                src="https://images.unsplash.com/photo-1572048572872-2394404cf1f3?q=80&w=900&auto=format&fit=crop"
+                alt="Керамическая ваза Terra ручной работы"
+                width="720" height="900" loading="lazy"
+              />
+            </figure>
+            <div class="product-card__body">
+              <h3 class="product-card__title">Ваза Terra</h3>
+              <p class="product-card__material">Керамика</p>
+              <div class="product-card__footer">
+                <data class="product-card__price" value="42000">42 000 ₸</data>
+                <button type="button" class="product-card__cta" aria-label="Добавить «Ваза Terra» в корзину">
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>
