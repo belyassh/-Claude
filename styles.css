@@ -274,3 +274,52 @@ body {
     transition: none;
   }
 }
+
+.product-card__material {
+  margin-top: var(--space-1);
+  margin-bottom: var(--space-3); /* было var(--space-4) → 16px, стало 12px (−4px) */
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-ink-soft);
+}
+
+.product-card__price {
+  font-weight: 600;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-accent); /* было var(--color-ink) — теперь акцентный sage */
+}
+
+.product-card__cta {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-ink);
+  background: transparent;
+  color: var(--color-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background-color 0.3s var(--ease-premium),
+    color 0.3s var(--ease-premium),
+    border-color 0.3s var(--ease-premium),
+    transform 0.3s var(--ease-premium);
+}
+
+.product-card__cta:hover {
+  background-color: var(--color-ink);
+  color: var(--color-surface);
+  transform: scale(1.08);
+}
+
+.product-card__cta:active {
+  transform: scale(0.92);
+  transition: transform 0.15s var(--ease-premium); /* быстрее, чем hover — ощущение «нажатия» */
+}
+
+.product-card__cta:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
